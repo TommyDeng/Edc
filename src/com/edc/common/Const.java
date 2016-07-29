@@ -3,7 +3,7 @@ package com.edc.common;
 public class Const {
 	@Deprecated
 	public static final String SP = "_";
-
+ 
 	public static final String EVTP_LOGIN_TC = "EVTPLOGINTC";
 	public static final String EVTP_LOGOUT_TC = "EVTPLOGOUTTC";
 	public static final String EVTP_LOGIN_SD = "EVTPLOGINSD";
