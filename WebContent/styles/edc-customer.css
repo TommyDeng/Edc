@@ -1,0 +1,273 @@
+/*
+ * 基于div的基本页面root
+ */
+div.base-page {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: none;
+}
+
+div.base-page-header {
+	margin: 0 auto;
+	border: 1px solid;
+	width: 100%;
+	position: relative;
+}
+
+div.base-page-content {
+	float: left;
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+}
+
+div.base-page-left {
+	float: left;
+	/* 	border: 1px black solid; */
+	width: 15%;
+	max-width: 15%;
+}
+
+div.base-page-right {
+	max-width: 84%;
+	width: 85%;
+	height: 50%;
+	/* 	border: 1px black solid; */
+	float: left;
+	display: none;
+}
+
+div.base-page-footer {
+	margin: 0 auto;
+	border: 1px solid;
+	width: 100%;
+}
+
+/*
+ * 自适应宽度img
+ */
+img.img-autosize {
+	width: 100%;
+}
+
+/*
+ * 左侧菜单 元素
+ */
+.right-menu {
+	background-repeat: no-repeat;
+	background-size: 2.5em;
+	background-position: 0.5em 0.7em;
+	padding-left: 2.5em;
+	background-color: black;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	-khtml-border-radius: 0.25em;
+	color: darkcyan;
+	/* 	text-shadow: -1px -1px rgba(0, 0, 0, 0.3); */
+	font-size: 1em;
+	box-shadow: inset -1px -1px 0.1em rgba(0, 0, 0, 0.25), inset 1px 1px
+		0.1em rgba(255, 255, 255, 0.25), -1px -1px 0.1em rgba(0, 0, 0, 0.25),
+		1px 1px 0.1em rgba(255, 255, 255, 0.25);
+	padding: 0.35em;
+	padding-right: 1em;
+	padding-left: 1em;
+	min-width: 98%;
+	min-height: 4em;
+	text-align: right;
+}
+
+.right-menu#teacher_menu1 {
+	background-image: url('../images/edc/userlist.png');
+}
+
+.right-menu#teacher_menu2 {
+	background-image: url('../images/edc/screenbroadcast.png');
+}
+
+.right-menu#teacher_menu3 {
+	background-image: url('../images/edc/chat.png');
+}
+
+.right-menu#teacher_menu4 {
+	background-image: url('../images/edc/fileshare.png');
+}
+
+.right-menu#student_menu1 {
+	background-image: url('../images/edc/home.png');
+}
+
+.right-menu#teacher_menu5 {
+	background-image: url('../images/edc/fileshare.png');
+}
+
+.online-user-div {
+	background-image: url('../images/edc/onlineuser.png');
+	background-repeat: no-repeat;
+	background-size: 3em;
+	background-position: 0.1em 0.1em;
+	padding-left: 2.5em;
+	background-color: limegreen;
+	/* 	border: 1px solid rgba(0, 0, 0, 0.4); */
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	-khtml-border-radius: 0.25em;
+	border-radius: 0.25em;
+	color: white;
+	text-shadow: -1px -1px rgba(0, 0, 0, 0.3);
+	font-size: 1em;
+	box-shadow: inset -1px -1px 0.1em rgba(0, 0, 0, 0.25), inset 1px 1px
+		0.1em rgba(255, 255, 255, 0.25), -1px -1px 0.1em rgba(0, 0, 0, 0.25),
+		1px 1px 0.1em rgba(255, 255, 255, 0.25);
+	padding: 0.35em;
+	padding-right: 1em;
+	padding-left: 1em;
+	min-width: 6em;
+	min-height: 3em;
+	max-width: 8em;
+	text-align: right;
+}
+
+.offline-user-div {
+	background-image: url('../images/edc/onlineuser.png');
+	background-repeat: no-repeat;
+	background-size: 3em;
+	background-position: 0.1em 0.1em;
+	padding-left: 2.5em;
+	background-color: gray;
+	/* 	border: 1px solid rgba(0, 0, 0, 0.4); */
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	-khtml-border-radius: 0.25em;
+	border-radius: 0.25em;
+	color: white;
+	text-shadow: -1px -1px rgba(0, 0, 0, 0.3);
+	font-size: 1em;
+	box-shadow: inset -1px -1px 0.1em rgba(0, 0, 0, 0.25), inset 1px 1px
+		0.1em rgba(255, 255, 255, 0.25), -1px -1px 0.1em rgba(0, 0, 0, 0.25),
+		1px 1px 0.1em rgba(255, 255, 255, 0.25);
+	padding: 0.35em;
+	padding-right: 1em;
+	padding-left: 1em;
+	min-width: 6em;
+	min-height: 3em;
+	text-align: right;
+}
+
+.student-info-div {
+	background-image: url('../images/edc/onlineuser.png');
+	background-repeat: no-repeat;
+	background-size: 3em;
+	background-position: 0.1em 0.1em;
+	padding-left: 2.5em;
+	/* 	background-color: limegreen; */
+	/* 	border: 1px solid rgba(0, 0, 0, 0.4); */
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	-khtml-border-radius: 0.25em;
+	border-radius: 0.25em;
+	/* 	color: white; */
+	text-shadow: -1px -1px rgba(0, 0, 0, 0.3);
+	font-size: 1.2em;
+	/* 	box-shadow: inset -1px -1px 0.1em rgba(0, 0, 0, 0.25), inset 1px 1px */
+	/* 		0.1em rgba(255, 255, 255, 0.25), -1px -1px 0.1em rgba(0, 0, 0, 0.25), */
+	/* 		1px 1px 0.1em rgba(255, 255, 255, 0.25); */
+	padding: 0.35em;
+	padding-right: 1em;
+	padding-left: 1em;
+	min-width: 6em;
+	min-height: 3em;
+	max-width: 8em;
+	text-align: right;
+}
+
+div#chat_output_div {
+	margin: 1em;
+	padding: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 15em;
+	height: 15em;
+}
+
+div#chat_input_div {
+	margin: 1em;
+	padding: 0;
+}
+
+.twinkleUserIcon {
+	background-color: crimson;
+}
+
+.student-raisehand-div {
+	width: 5em;
+	min-height: 3em;
+	text-align: right;
+}
+
+div#login_tips_div {
+	opacity: 0;
+	height: 1em;
+	color: crimson;
+}
+
+div#change_name_tips_div {
+	opacity: 0;
+	height: 1em;
+	width: 10em;
+	color: crimson;
+	padding-bottom: 0.4em;
+	padding-left: 1em;
+}
+
+div.file_share_input_div {
+	padding-left: 2em;
+}
+
+div.file_share_output_div {
+	margin: 1em;
+	padding: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 15em;
+	height: 15em;
+}
+
+#file_share2_progress {
+	display: none;
+}
+
+.header-tips {
+	text-align: center;
+}
+
+.version-tag {
+	display: block;
+	position: absolute;
+	width: 96px;
+	border: solid #fff;
+	border-width: 2px 1px;
+	padding: .25em 2.25em;
+	margin: 0 15px 0 0;
+	right: 0;
+	top: -2px;
+	background: #f7cf57;
+	color: #000;
+	font-size: .8em;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 1px 1px #fff;
+	z-index: 9;
+	-webkit-transform: rotate(45deg) translate(4.8em, -1em);
+	-moz-transform: rotate(45deg) translate(4.8em, -1em);
+	-ms-transform: rotate(45deg) translate(4.8em, -1em);
+	-o-transform: rotate(45deg) translate(4.8em, -1em);
+	transform: rotate(45deg);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .40);
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, .40);
+	-o-box-shadow: 0 0 6px rgba(0, 0, 0, .40);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .40);
+}

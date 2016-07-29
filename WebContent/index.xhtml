@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="icon" type="image/png" href="images/guacamole-logo-64.png" />
+<link rel="apple-touch-icon" type="image/png"
+	href="images/guacamole-logo-144.png" />
+<link rel="stylesheet" type="text/css" href="styles/edc-customer.css" />
+<link rel="stylesheet" type="text/css" href="styles/ui.css" />
+<link rel="stylesheet" type="text/css" href="styles/login.css" />
+<link rel="stylesheet" type="text/css" href="styles/jquery.loadmask.css" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<title>Education</title>
+</head>
+<body>
+	<div id="login-ui">
+		<p class="version-tag">v0.0.1_base</p>
+		
+		<div id="login-dialog-middle">
+			<div id="login-dialog">
+				<p id="login-error"></p>
+				<!-- 				<form id="login-form" action="login" method="post"> -->
+				<div id="version">Edc</div>
+				<div id="login-fields">
+					<table>
+						<tr>
+							<th>Username</th>
+							<td><input type="text" name="username" id="username"
+								autofocus="autofocus" required="required" /></td>
+						</tr>
+						<tr id="password_tr">
+							<th>Password</th>
+							<td><input type="password" name="password" id="password" /></td>
+						</tr>
+						<tr id="classroom_tr">
+							<th>Classroom</th>
+							<td><input type="text" name="classroomName" id="classroomName" /></td>
+						</tr>
+						<tr id="login_tips_tr">
+							<td colspan="2"><div id="login_tips_div" /></td>
+						</tr>
+					</table>
+
+					<!-- 					<img class="logo" src="images/guac-mono-192.png" /> -->
+				</div>
+				<div id="buttons">
+					<input type="submit" name="login" id="login_btn" value="Enter" />
+				</div>
+				<!-- 				</form> -->
+			</div>
+		</div>
+	</div>
+	<div id="all_main_page" class="base-page">
+		<!-- 头部 -->
+		<div id="all_header" class="base-page-header">
+			<div id="logout-panel">
+				<!-- 				<button id="back">Back</button> -->
+				<button id="logout_btn" onclick="userLogout()">Logout</button>
+			</div>
+
+			<h2 id="header_tips" class="header-tips">_</h2>
+		</div>
+
+		<!-- 主页面 -->
+		<div id="all_content" class="base-page-content">
+
+			<!-- 左侧菜单 -->
+			<div id="all_menus" class="base-page-left">
+				<input type="button" id="teacher_menu1" class="right-menu"
+					value="Student      &#13;&#10;Demonstration"
+					onclick="onM_student_demonstration(this)" /> <input type="button"
+					class="right-menu" id="teacher_menu2"
+					value="Screen    &#13;&#10;Broadcast"
+					onclick="onM_screen_broadcast(this)" /> <input type="button"
+					id="student_menu1" class="right-menu" value="Home Page"
+					onclick="onM_student_HomePage(this)" /> <input type="button"
+					class="right-menu" id="teacher_menu3" value="Chat"
+					onclick="onM_chatingroom(this)" />
+				<!-- 					<input type="button" -->
+				<!-- 					class="right-menu" id="teacher_menu4" value="File Sharing" -->
+				<!-- 					onclick="onM_file_sharing(this)" /> -->
+				<input type="button" class="right-menu" id="teacher_menu5"
+					value="File Sharing" onclick="onM_file_sharing2(this)" />
+			</div>
+			<!-- 右侧区域 -->
+			<div id="all_right">
+
+				<!-- 用户列表 -->
+				<div id="teacher_menu_studentdemonstration" class="base-page-right">
+					<h2>Online</h2>
+					<table id="online_users_table" class="onlineoffline-users-table" />
+					<h2>Offline</h2>
+					<table id="offline_users_table" class="onlineoffline-users-table" />
+				</div>
+
+				<!-- 屏幕共享 -->
+				<div id="teacher_menu_screenbroadcast" class="base-page-right">Screen
+					Broadcast under construction...</div>
+
+				<!-- 学生主页 -->
+				<div id="student_homepage" class="base-page-right">
+					<h2>Student Info</h2>
+					<div id="student_info_div" class="student-info-div"
+						onclick="prepareStudentChangeInfo()"></div>
+					<div id="student_changeinfo_div" style="display: none">
+						<input id="student_changeinfo_div_name_input" type="text"></input>
+						<button onclick="sendStudentChangeInfo()">Change Name</button>
+						<div id="change_name_tips_div" />
+					</div>
+					<h2>Student Operation</h2>
+					<div class="student-raisehand-div" onclick="studentRaisehand()">
+						<img id="student_raisehand_div" src="images/edc/handsup.png"
+							class="img-autosize"></img>
+					</div>
+				</div>
+
+				<!-- 聊天界面 -->
+				<div id="teacher_menu_chatingroom" class="base-page-right">
+					<h2>Chat</h2>
+					<div id="chat_output_div" />
+					<div id="chat_input_div">
+						<textarea rows="2" cols="40" id="chat_input_textarea"></textarea>
+						<button id="chat_send_btn" onclick="chatMessageSendOut()">Send</button>
+					</div>
+				</div>
+
+				<!-- 文件共享界面  over websocket -->
+				<div id="teacher_menu_filesharing" class="base-page-right">
+					<h2>File Share Over WebSocket</h2>
+					<div id="file_share_output_div" class="file_share_output_div"></div>
+
+					<div id="file_share_input_div" class="file_share_input_div">
+						<input type="file" id="upload_share_file" />
+						<button id="file_share_send_btn"
+							onclick="startFileShareUploading()">Send</button>
+						<!-- FileReader + Canvas
+						http://msdn.microsoft.com/zh-cn/library/ie/hh673567.aspx -->
+						<!-- html5 progress -->
+						<!-- websocket bufferedAmount  -->
+					</div>
+				</div>
+
+				<!-- 文件共享界面2 over http  -->
+				<div id="teacher_menu_filesharing2" class="base-page-right">
+					<h2>File Share</h2>
+					<div id="file_share2_output_div" class="file_share_output_div"></div>
+
+					<div id="file_share2_input_div" class="file_share_input_div">
+						<input type="file" id="upload_share_file2" />
+						<button id="file_share2_send_btn"
+							onclick="startFileShareUploading2()">Send</button>
+
+						<progress id="file_share2_progress" max="0" />
+						<!-- FileReader + Canvas
+						http://msdn.microsoft.com/zh-cn/library/ie/hh673567.aspx -->
+						<!-- html5 progress -->
+						<!-- websocket bufferedAmount  -->
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 底部 -->
+		<!-- 		<div id="teacher_footer" class="base-page-footer"> -->
+		<!-- 			<img src="images/edc/teachertools.png"  class="img-autosize"/> -->
+		<!-- 		</div> -->
+	</div>
+	<script type="text/javascript" src="scripts/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.loadmask.js"></script>
+
+
+	<script type="text/javascript" src="scripts/unpacked/client-ui.js"></script>
+	<script type="text/javascript" src="scripts/unpacked/buss.js"></script>
+	<script type="text/javascript" src="scripts/unpacked/websck.js"></script>
+
+	<!-- 	<script type="text/javascript" src="scripts/packed/encodedclient-ui.js"></script> -->
+	<!-- 	<script type="text/javascript" src="scripts/packed/encodedbuss.js"></script> -->
+	<!-- 	<script type="text/javascript" src="scripts/packed/encodedwebsck.js"></script> -->
+
+</body>
+
+</html>
